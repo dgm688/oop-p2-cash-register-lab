@@ -34,7 +34,8 @@ class CashRegister:
             return
         self.total = self.total - (self.total * self.discount / 100)
         self.total = round(self.total, 2)
-        print(f"After the discount, the total comes to ${self.total}.")
+        display = int(self.total) if self.total == int(self.total) else self.total
+        print(f"After the discount, the total comes to ${display}.")
 
     def void_last_transaction(self):
         if not self.previous_transactions:
